@@ -1,24 +1,18 @@
 import sys
 input = sys.stdin.readline
 
-start, end, stream = input().split()
-start = int(start[:2] + start[3:])
-end = int(end[:2] + end[3:])
-stream = int(stream[:2] + stream[3:])
+s, e, q = input().rstrip().split()
 
-attend = set()
-cnt = 0
-
+d = dict()
+set_ = set()
 while True:
     try:
-        time, name = input().split()
-        time = int(time[:2] + time[3:])
-        if time <= start:
-            attend.add(name)
-        elif end <= time <= stream and name in attend:
-            attend.remove(name)
-            cnt += 1
+        time, name = input().rstrip().split()
+        if time <= s:
+            d[name] = time
+        elif e <= time <= q:
+            if name in d.keys():
+                set_.add(name)
     except:
         break
-
-print(cnt)
+print(len(set_))
