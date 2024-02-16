@@ -10,6 +10,6 @@ l = int(input())
 s = input().rstrip()
 res = 0
 for i in range(l):
-    res += (eng[s[i]] * (r**i)) % M
+    res += eng[s[i]] * (r**i)
 
-print(res)
+print(res%M)
