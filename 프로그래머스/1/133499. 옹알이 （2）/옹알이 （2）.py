@@ -7,7 +7,7 @@ def solution(babbling):
         else:
             tmp = [1,2,3,4]
             for i,w in enumerate(li):
-                if w in word:
+                if w in word :
                     word = word.replace(w,str(tmp[i]))
             if word.isdigit():
                 cur = ''
